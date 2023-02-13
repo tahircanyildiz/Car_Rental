@@ -3,9 +3,9 @@
 using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using Entities.Concrete;
+using Entities.Concrete;    
 
-CarManager carManager = new CarManager(new EfCarDal());
+CarManager carManager = new CarManager(new EfCarDal(),new BrandManager(new EfBrandDal()));
 BrandManager brandManager = new BrandManager(new EfBrandDal());
 ColorManager colorManager = new ColorManager(new EfColorDal());
 CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
