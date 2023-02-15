@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -48,7 +49,7 @@ namespace WebAPI.Controllers
         }
         //Burda fromform name= "Image" ifadesi bizim postmanden dosyayı eklerken Body kısmındaki form-data'dan Image adıyla dosya atmamıza yarıyor. Yani Postmande Image yazıp tikleyip dosyamızı seçip atıyoruz.
         [HttpPost("add")]
-        public IActionResult Add([FromForm(Name = ("Image"))] IFormFile file, [FromForm] CarImage carImage)
+        public IActionResult Add([FromForm(Name = ("Image"))] IFormFile file, [FromForm] Image carImage)
         {
             var result = _carImageService.Add(file, carImage);
             if (result.Success)

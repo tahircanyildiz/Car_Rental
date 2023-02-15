@@ -1,6 +1,7 @@
-﻿using Castle.Core.Configuration;
-using Core.Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Core.Extensions;
 using Core.Utilities.Security.Encryption;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Core.Utilities.Security.JWT
 {
     public class JwtHelper : ITokenHelper
     {
-        private IConfiguration Configuration; //WebAPI deki appsettings.json dosyamızı değerlerini set etmek için kullandık.
+        public IConfiguration Configuration; //WebAPI deki appsettings.json dosyamızı değerlerini set etmek için kullandık.
         private TokenOptions _tokenOptions; //appsettings.json'daki TokenOptions'a IConfigration kullanarak set edicez, onun için field ürettik.
         private DateTime _accessTokenExpiration; // Token'ınımızın geçerlilik süresi
         public JwtHelper(IConfiguration configuration)

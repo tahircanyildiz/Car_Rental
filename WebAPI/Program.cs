@@ -82,10 +82,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -95,6 +92,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 
 

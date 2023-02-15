@@ -17,14 +17,14 @@ namespace Business.Concrete
     public class CarImageManager : ICarImageService
     {
         IImageDal _carImageDal;
-        public CarImageManager(ImageDal carImageDal)
+        public CarImageManager(IImageDal carImageDal)
         {
             _carImageDal = carImageDal;
         }
 
         public IDataResult<List<Image>> GetAll()
         {
-            return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
+            return new SuccessDataResult<List<Image>>(_carImageDal.GetAll());
         }
 
         public IDataResult<List<Image>> GetByCarId(int carId)
@@ -44,7 +44,7 @@ namespace Business.Concrete
             {
                 return result;
             }
-            carImage.ImagePath = FileHelper.Add(file);
+           // carImage.ImagePath =FileHelper.Add(file);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
             return new SuccessResult("Resim eklendi. ");
@@ -70,7 +70,7 @@ namespace Business.Concrete
             }
             carImage.Date = DateTime.Now;
             string oldPath = GetByImageId(carImage.Id).Data.ImagePath;
-            carImage.ImagePath = FileHelper.Update(oldPath, file);
+           // carImage.ImagePath =FileHelper.Update(oldPath, file);
             return new SuccessResult();
         }
         private IResult CheckIfImageLimitExceeded(int carId)
