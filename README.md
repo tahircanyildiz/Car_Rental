@@ -13,7 +13,7 @@
 1. Clone the repo:
 
    ```sh
-   git clone https://github.com/akifz21/RentACarProject.git
+   git clone https://github.com/tahircanyildiz/Car_Rental.git
    ```
 2. Open the `RentACar.sln` file with `Visual Studio`
 3. Open the `appsettings.json` file in the `WebApi` folder and enter your own database connection string
