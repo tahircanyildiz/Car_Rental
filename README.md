@@ -29,8 +29,6 @@
    
 5. Right click on the `WebAPI` project (layer) from the `Solution Explorer` and select `Set as Startup Project` 
 6. Start the project with `WebApi` in Visual Studio. Web API is ready and running!
-8. `NOTE:` 
-    Owner account of default products email=akif@ozdemir.com password=12345678
 
 ### Usage
  
